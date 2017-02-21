@@ -7,9 +7,9 @@
 //
 
 #include <iostream>
+#include "TravellingSalesMan.h"
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
-    return 0;
+    TravellingSalesMan *traverse = new TravellingSalesMan(0.8, 0.2);
+    
 }
