@@ -19,22 +19,26 @@ class TravellingSalesMan{
 public:
     TravellingSalesMan(double crossoverProbability, double mutationProbability);
     
-    static const  int cities = 15;
-    static const  int chromosomes = 20;
-    int xMax = 1000;
+    static const unsigned int cities = 20 ;
+    static const unsigned int chromosomes = 30 ;
+    int xMax = 100;
     int Xmin = 0;
-    int Ymax = 500;
+    int Ymax = 50;
     int Ymin = 0 ;
     
     void generateRandomPopulation();
     void generateNextPopultaion();
     double getFitness();
-    string getBestPath();
     double getBestDistance();
     double getAverageDistance();
     void getCurrPopulation();
     double sumDistance(int * val);
     void copyNewPopulation(int *val, int j);
+    void crossover(int * parentOne, int *parentTwo, int *childOne, int *childTwo);
+    void mutation(int *val);
+    void getPath();
+    int getMaximum(double *val);
+    void setRandomPopulation(int *val);
     
 private:
     double crossoverProbability, mutationProbability;
@@ -48,6 +52,9 @@ private:
     
     double estimateFitness(int *val);
     
+    int * selectionAlgorithm(double *val);
+    void rectifyVal(int *childOne, int value, int *childTwo);
+    bool checkforDuplicate(int *chromosomes, int count);
     
 };
 
